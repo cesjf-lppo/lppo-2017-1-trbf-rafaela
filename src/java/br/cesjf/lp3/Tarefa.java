@@ -1,3 +1,5 @@
+package br.cesjf.lp3;
+
 
 import java.io.Serializable;
 import java.util.Date;

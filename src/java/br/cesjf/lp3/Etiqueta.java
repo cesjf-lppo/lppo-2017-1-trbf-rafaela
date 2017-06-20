@@ -1,4 +1,7 @@
+package br.cesjf.lp3;
 
+
+import br.cesjf.lp3.Tarefa;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,15 +19,15 @@ import javax.persistence.Id;
  * @author RafaelaEmília
  */
 @Entity
-public class Usuario implements Serializable{
+public class Etiqueta implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nomeCompleto;
-    private String email;
-    private Integer senha;
+    private String autor;
+    private Integer titulo;
+    private Tarefa tarefa;
 
-    public Usuario() {
+    public Etiqueta() {
     }
 
     /**
@@ -42,49 +45,46 @@ public class Usuario implements Serializable{
     }
 
     /**
-     * @return the nomeCompleto
+     * @return the autor
      */
-    public String getNomeCompleto() {
-        return nomeCompleto;
+    public String getAutor() {
+        return autor;
     }
 
     /**
-     * @param nomeCompleto the nomeCompleto to set
+     * @param autor the autor to set
      */
-    public void setNomeCompleto(String nomeCompleto) {
-        this.nomeCompleto = nomeCompleto;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     /**
-     * @return the email
+     * @return the titulo
      */
-    public String getEmail() {
-        return email;
+    public Integer getTitulo() {
+        return titulo;
     }
 
     /**
-     * @param email the email to set
+     * @param titulo the titulo to set
      */
-    public void setEmail(String email) {
-        this.email = email;
+    public void setTitulo(Integer titulo) {
+        this.titulo = titulo;
     }
 
     /**
-     * @return the senha
+     * @return the tarefa
      */
-    public Integer getSenha() {
-        return senha;
+    public Tarefa getTarefa() {
+        return tarefa;
     }
 
     /**
-     * @param senha the senha to set
+     * @param tarefa the tarefa to set
      */
-    public void setSenha(Integer senha) {
-        this.senha = senha;
+    public void setTarefa(Tarefa tarefa) {
+        this.tarefa = tarefa;
     }
-    
-    
-
     
     
 }

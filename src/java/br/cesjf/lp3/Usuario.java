@@ -1,3 +1,5 @@
+package br.cesjf.lp3;
+
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -16,15 +18,15 @@ import javax.persistence.Id;
  * @author RafaelaEmília
  */
 @Entity
-public class Etiqueta implements Serializable{
+public class Usuario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String autor;
-    private Integer titulo;
-    private Tarefa tarefa;
+    private String nomeCompleto;
+    private String email;
+    private Integer senha;
 
-    public Etiqueta() {
+    public Usuario() {
     }
 
     /**
@@ -42,46 +44,49 @@ public class Etiqueta implements Serializable{
     }
 
     /**
-     * @return the autor
+     * @return the nomeCompleto
      */
-    public String getAutor() {
-        return autor;
+    public String getNomeCompleto() {
+        return nomeCompleto;
     }
 
     /**
-     * @param autor the autor to set
+     * @param nomeCompleto the nomeCompleto to set
      */
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
     }
 
     /**
-     * @return the titulo
+     * @return the email
      */
-    public Integer getTitulo() {
-        return titulo;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * @param titulo the titulo to set
+     * @param email the email to set
      */
-    public void setTitulo(Integer titulo) {
-        this.titulo = titulo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**
-     * @return the tarefa
+     * @return the senha
      */
-    public Tarefa getTarefa() {
-        return tarefa;
+    public Integer getSenha() {
+        return senha;
     }
 
     /**
-     * @param tarefa the tarefa to set
+     * @param senha the senha to set
      */
-    public void setTarefa(Tarefa tarefa) {
-        this.tarefa = tarefa;
+    public void setSenha(Integer senha) {
+        this.senha = senha;
     }
+    
+    
+
     
     
 }
