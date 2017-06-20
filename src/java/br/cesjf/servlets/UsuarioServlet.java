@@ -111,7 +111,7 @@ public class UsuarioServlet extends HttpServlet {
           List<Usuario> usuarios;
         
         UsuarioJPAController dao = new UsuarioJPAController(ut, emf);
-        usuarios = dao.findUsuariosEntities();
+        usuarios = dao.findUsuarioEntities();
         
         request.setAttribute("usuarios", usuarios);
         request.getRequestDispatcher("WEB-INF/listar-livros.jsp").forward(request, response);

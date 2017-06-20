@@ -5,6 +5,7 @@
  */
 package br.cesjf.DAO;
 
+import br.cesjf.lp3.Tarefa;
 import br.cesjf.lp3.Usuario;
 import br.cesjf.lppo.dao.exceptions.NonexistentEntityException;
 import br.cesjf.lppo.dao.exceptions.RollbackFailureException;
@@ -20,9 +21,9 @@ import javax.transaction.UserTransaction;
  *
  * @author RafaelaEmília
  */
-public class UsuarioJPAController {
+public class TarefaJPAController {
     
-    public UsuarioJPAController(UserTransaction utx, EntityManagerFactory emf) {
+    public TarefaJPAController(UserTransaction utx, EntityManagerFactory emf) {
         this.utx = utx;
         this.emf = emf;
     }
@@ -32,12 +33,12 @@ public class UsuarioJPAController {
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-    public void create(Usuario usuario) throws RollbackFailureException, Exception {
+    public void create(Tarefa tarefa) throws RollbackFailureException, Exception {
         EntityManager em = null;
         try {
             utx.begin();
             em = getEntityManager();
-            em.persist(usuario);
+            em.persist(tarefa);
             utx.commit();
         } catch (Exception ex) {
             try {
@@ -52,12 +53,12 @@ public class UsuarioJPAController {
             }
         }
     }
-    public void edit(Usuario usuario) throws NonexistentEntityException, RollbackFailureException, Exception{
+    public void edit(Tarefa tarefa) throws NonexistentEntityException, RollbackFailureException, Exception{
         EntityManager em = null;
         try {
             utx.begin();
             em = getEntityManager();
-            usuario = em.merge(usuario);
+            tarefa = em.merge(tarefa);
             utx.commit();
         } catch (Exception ex) {
             try {
@@ -67,9 +68,9 @@ public class UsuarioJPAController {
             }
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Long id = usuario.getId();
-                if (findUsuario(id) == null) {
-                    throw new NonexistentEntityException("The usuario with id " + id + " no longer exists.");
+                Long id = tarefa.getId();
+                if (findTarefa(id) == null) {
+                    throw new NonexistentEntityException("The tarefa with id " + id + " no longer exists.");
                 }
             }
             throw ex;
@@ -85,14 +86,14 @@ public class UsuarioJPAController {
         try {
             utx.begin();
             em = getEntityManager();
-            Usuario usuario;
+            Tarefa tarefa;
             try {
-                usuario = em.getReference(Usuario.class, id);
-                usuario.getId();
+                tarefa = em.getReference(Tarefa.class, id);
+                tarefa.getId();
             } catch (EntityNotFoundException enfe) {
-                throw new NonexistentEntityException("The usuario with id " + id + " no longer exists.", enfe);
+                throw new NonexistentEntityException("The tarefa with id " + id + " no longer exists.", enfe);
             }
-            em.remove(usuario);
+            em.remove(tarefa);
             utx.commit();
         } catch (Exception ex) {
             try {
@@ -108,19 +109,19 @@ public class UsuarioJPAController {
         }
     }
     
-    public List<Usuario> findUsuarioEntities() {
-        return findUsuarioEntities(true, -1, -1);
+     public List<Tarefa> findTarefaEntities() {
+        return findTarefaEntities(true, -1, -1);
     }
 
-    public List<Usuario> findUsuarioEntities(int maxResults, int firstResult) {
-        return findUsuarioEntities(false, maxResults, firstResult);
+   public List<Tarefa> findTarefaEntities(int maxResults, int firstResult) {
+        return findTarefaEntities(false, maxResults, firstResult);
     }
 
-    private List<Usuario> findUsuarioEntities(boolean all, int maxResults, int firstResult) {
+   private List<Tarefa> findTarefaEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Usuario.class));
+            cq.select(cq.from(Tarefa.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -132,17 +133,17 @@ public class UsuarioJPAController {
         }
     }
 
-    public Usuario findUsuario(Long id) {
+    public Tarefa findTarefa(Long id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Usuario.class, id);
+            return em.find(Tarefa.class, id);
         } finally {
             em.close();
         }
-    }
+    }   
 
+  
+
+       
     
-
-    
-
 }
