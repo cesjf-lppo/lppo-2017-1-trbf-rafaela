@@ -6,7 +6,6 @@
 package br.cesjf.DAO;
 
 import br.cesjf.lp3.Tarefa;
-import br.cesjf.lp3.Usuario;
 import br.cesjf.lppo.dao.exceptions.NonexistentEntityException;
 import br.cesjf.lppo.dao.exceptions.RollbackFailureException;
 import java.util.List;
