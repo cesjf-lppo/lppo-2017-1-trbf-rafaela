@@ -114,12 +114,12 @@ public class UsuarioServlet extends HttpServlet {
         usuarios = dao.findUsuarioEntities();
         
         request.setAttribute("usuarios", usuarios);
-        request.getRequestDispatcher("WEB-INF/listar-livros.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/listar-usuarios.jsp").forward(request, response);
     }
 
     private void doCriarGet(HttpServletRequest request, HttpServletResponse response) 
         throws ServletException, IOException{
-         request.getRequestDispatcher("WEB-INF/novo-livro.jsp").forward(request, response);
+         request.getRequestDispatcher("WEB-INF/novo-usuario.jsp").forward(request, response);
         
     }
 
