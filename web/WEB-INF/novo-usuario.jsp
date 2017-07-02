@@ -3,24 +3,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Novo Livro</title>
+        <title>Novo Usuario</title>
     </head>
     <body>
         <%@include file = "jspf/menu.jspf" %>
-        <h1>Novo Livro</h1>
+        <%@include file = "jspf/header.jspf" %>
+        <%@include file = "jspf/footer.jspf" %>
+        <h1>Novo Usuario</h1>
         <form method="post">
             <table>
                 <tr>
-                    <td>Título: </td>
-                    <td><input type="text" name="titulo" /></td>
+                    <td>Nome </td>
+                    <td><input type="text" name="nome" /></td>
                 </tr>
                 <tr>
-                    <td>Ano </td>
-                    <td><input type="number" name="ano" value="2017"/></td>
+                    <td>Email </td>
+                    <td><input type="text" name="email" /></td>
                 </tr>
                 <tr>
-                    <td>Autor </td>
-                    <td><input type="text" name="autor" /></td>
+                    <td>Senha </td>
+                    <td><input type="text" name="senha" /></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="right">

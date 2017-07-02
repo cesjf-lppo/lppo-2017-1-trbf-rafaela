@@ -7,6 +7,8 @@
     </head>
     <body>
         <%@include file = "jspf/menu.jspf" %>
+        <%@include file = "jspf/header.jspf" %>
+        <%@include file = "jspf/footer.jspf" %>
         <h1>Editar Usuario</h1>
         <form method="post">
             <table>
@@ -16,15 +18,15 @@
                 </tr>
                 <tr>
                     <td>Nome Completo: </td>
-                    <td><input type="text" name="titulo" value="${usuario.nomeCompleto}" /> ${usuario.nomeCompleto}</td>
+                    <td><input type="text" name="nome" value="${usuario.nome}" /> </td>
                 </tr>
                 <tr>
                     <td>Email: </td>
-                    <td><input type="text" name="titulo" value="${usuario.email}" /> ${usuario.email}</td>
+                    <td><input type="text" name="email" value="${usuario.email}" /></td>
                 </tr>
                 <tr>
                     <td>Senha </td>
-                    <td><input type="number" name="senha" value="${usuario.senha}"/> ${usuario.senha}</td>
+                    <td><input type="text" name="senha" value="${usuario.senha}"/> </td>
                 </tr>
                
                 <tr>
