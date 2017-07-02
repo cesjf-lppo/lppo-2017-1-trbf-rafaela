@@ -18,7 +18,15 @@
                         </tr>
                         <tr>
                             <td>Titulo: </td>
-                            <td><input type="text" name="titulo" value="${etiqueta.titulo}" /></td>
+                            <td>
+                             <select name="titulo">
+                                     <option value="A Fazer">A Fazer</option> 
+                                    <option value="Fazendo">Fazendo</option>
+                                    <option value="Finalizado">Finalizado</option>
+                                    <option value="Bloqueado">Bloqueado</option>
+                                </select>
+                            </td>
+                            
                         </tr>
                         <tr>
                             <td colspan="2" align="right">

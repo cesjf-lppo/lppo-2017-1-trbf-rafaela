@@ -20,7 +20,7 @@ import javax.transaction.UserTransaction;
 
 @WebServlet(name = "UsuarioServlet", urlPatterns = {"/criarUsuario.html", "/editarUsuario.html", "/excluirUsuario.html", "/listarUsuario.html" })
 public class UsuarioServlet extends HttpServlet {
-    @PersistenceUnit(unitName = "lppo-2017-1-trbf-RafaelaZanettiPU")
+    @PersistenceUnit(unitName = "trbflppo-2017-1PU")
     EntityManagerFactory emf;
     
     @Resource(name = "java:comp/UserTransaction")

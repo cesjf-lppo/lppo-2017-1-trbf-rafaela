@@ -25,7 +25,7 @@ import javax.transaction.UserTransaction;
 @WebServlet(name = "EtiquetaServlet", urlPatterns = {"/criarEtiqueta.html","/listar-etiqueta.html","/editar-etiqueta.html","/excluir-etiqueta.html"})
 public class EtiquetaServlet extends HttpServlet {
 
-    @PersistenceUnit(unitName = "lppo-2017-1-trbf-RafaelaZanettiPU")
+    @PersistenceUnit(unitName = "trbflppo-2017-1PU")
     EntityManagerFactory emf;
     
     @Resource(name = "java:comp/UserTransaction")

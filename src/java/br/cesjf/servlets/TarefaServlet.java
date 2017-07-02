@@ -24,7 +24,7 @@ import javax.transaction.UserTransaction;
 
 @WebServlet(name = "TarefaServlet", urlPatterns = {"/criarTarefa.html", "/editar-tarefa.html", "/excluirTarefa.html","/listarTarefa.html" })
 public class TarefaServlet extends HttpServlet {
-@PersistenceUnit(unitName = "lppo-2017-1-trbf-RafaelaZanettiPU")
+@PersistenceUnit(unitName = "trbflppo-2017-1PU")
     EntityManagerFactory emf;
     
     @Resource(name = "java:comp/UserTransaction")
